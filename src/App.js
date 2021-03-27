@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Chart from './components/Chart'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         <code>Lên nào mấy ku</code> 
+         <code>Hello my name is Nguyen Thanh Phong</code> 
         </p>
         <a
           className="App-link"
@@ -18,6 +18,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Chart />
     </div>
   );
 }
