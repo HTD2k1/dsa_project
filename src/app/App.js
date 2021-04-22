@@ -1,10 +1,10 @@
 
 import './App.css';
-import Chart from "../components/Chart";
+import MixedChart from "../components/index";
 function App() {
   return (
     <div className="App">
-      <Chart />
+      <MixedChart />
     </div>
   );
 }
