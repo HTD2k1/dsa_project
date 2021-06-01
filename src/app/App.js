@@ -1,11 +1,10 @@
+import GameSection from '../components';
 import './App.css';
-
-import Phong from './Phong';
 
 function App() {
   return (
     <div className="App">
-      <Phong/>
+      <GameSection/>
     </div>
   );
 }
