@@ -1,5 +1,4 @@
 import React from 'react';
-import './NewGameBar.css';
 
 function NewGame(props) {
     return (
