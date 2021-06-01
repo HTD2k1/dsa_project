@@ -1,8 +1,10 @@
 .menuGame {
-  width: 250px;
+  width: 300px;
   background-color: aquamarine;
-  margin-left: 700px;
-  margin-top: 200px;
+  /* margin-left: 700px;
+  margin-top: 200px; */
+  border: 1px solid blue;
+  align-self: center;
 }
 
 .newGame {
@@ -20,7 +22,6 @@
   border-radius: 50px;
   color: #1a8cff;
   font-size: 20px;
-  margin-left: 8px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -44,49 +45,4 @@
   border-radius: 50px;
   color: #1a8cff;
   font-size: 20px;
-}
-
-.newGameBar {
-  width: 200px;
-  background-color: #e6eeff;
-  margin-left: 25px;
-}
-.header {
-  font-size: 20px;
-}
-
-.easy {
-  font-size: 15px;
-  color: #1a8cff;
-  width: 200px;
-  height: 30px;
-  background-color: #e6eeff;
-  border-color: #1a8cff;
-}
-
-.medium {
-  font-size: 15px;
-  color: #1a8cff;
-  width: 200px;
-  height: 30px;
-  background-color: #e6eeff;
-  border-color: #1a8cff;
-}
-
-.hard {
-  font-size: 15px;
-  color: #1a8cff;
-  width: 200px;
-  height: 30px;
-  background-color: #e6eeff;
-  border-color: #1a8cff;
-}
-
-.expert {
-  font-size: 15px;
-  color: #1a8cff;
-  width: 200px;
-  height: 30px;
-  background-color: #e6eeff;
-  border-color: #1a8cff;
 }
