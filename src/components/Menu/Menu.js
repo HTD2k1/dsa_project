@@ -3,7 +3,6 @@ import PrintFunctionOfTheGame from './FunctionOfTheGame';
 import './Menu.css';
 import NewGameBar from './NewGameBar';
 
-
 function MenuBar(props) {
     const [state,setState] = React.useState(false);
 
