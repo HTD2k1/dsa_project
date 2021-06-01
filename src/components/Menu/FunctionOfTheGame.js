@@ -1,8 +1,6 @@
 import React from 'react';
 
 function PrintFunctionOfTheGame(props) {
-    let undoStack = []
-    let redoStack = []
 
     const handleUndo = () =>{
         
