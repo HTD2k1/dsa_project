@@ -1,0 +1,46 @@
+.menuGame {
+  width: 250px;
+  background-color: aquamarine;
+  margin-left: 700px;
+  margin-top: 200px;
+}
+
+.newGame {
+  background-color: #1a8cff;
+  border-radius: 50px;
+  border-color: #1a8cff;
+  color: aliceblue;
+  font-size: 30px;
+  margin-left: 45px;
+  margin-top: 10px;
+}
+
+.undo {
+  background-color: white;
+  border-radius: 50px;
+  color: #1a8cff;
+  font-size: 20px;
+  margin-left: 8px;
+  margin-top: 10px;
+}
+
+.erase {
+  background-color: white;
+  border-radius: 50px;
+  color: #1a8cff;
+  font-size: 20px;
+}
+
+.edit {
+  background-color: white;
+  border-radius: 50px;
+  color: #1a8cff;
+  font-size: 20px;
+}
+
+.hint {
+  background-color: white;
+  border-radius: 50px;
+  color: #1a8cff;
+  font-size: 20px;
+}
