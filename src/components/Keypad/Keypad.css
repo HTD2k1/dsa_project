@@ -1,0 +1,19 @@
+
+.status__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+}
+
+.status__number {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 26px;
+  padding: 12px 0;
+  cursor: pointer;
+  border: 0.5px dashed black;
+}
+
+.status__number.status__number--selected {
+  color: var(--color-blue);
+}

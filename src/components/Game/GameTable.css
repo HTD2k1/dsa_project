@@ -17,7 +17,7 @@
 }
 
 .game {
-  width: 70%;
+  flex: 1;
 }
 
 .game__board {
