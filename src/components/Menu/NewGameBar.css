@@ -1,0 +1,44 @@
+.newGameBar {
+  width: 200px;
+  background-color: #e6eeff;
+  margin-left: 25px;
+}
+.header {
+  font-size: 20px;
+}
+
+.easy {
+  font-size: 15px;
+  color: #1a8cff;
+  width: 200px;
+  height: 30px;
+  background-color: #e6eeff;
+  border-color: #1a8cff;
+}
+
+.medium {
+  font-size: 15px;
+  color: #1a8cff;
+  width: 200px;
+  height: 30px;
+  background-color: #e6eeff;
+  border-color: #1a8cff;
+}
+
+.hard {
+  font-size: 15px;
+  color: #1a8cff;
+  width: 200px;
+  height: 30px;
+  background-color: #e6eeff;
+  border-color: #1a8cff;
+}
+
+.expert {
+  font-size: 15px;
+  color: #1a8cff;
+  width: 200px;
+  height: 30px;
+  background-color: #e6eeff;
+  border-color: #1a8cff;
+}
