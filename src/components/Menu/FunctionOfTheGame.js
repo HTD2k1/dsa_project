@@ -10,12 +10,21 @@ function PrintFunctionOfTheGame(props) {
         
     }
 
+    const handleEdit = () =>{
+        
+    }
+
+    const handleHint = () =>{
+        
+    }
+
+
     return (
         <div>
             <button className = "undo" onClick = {handleUndo}>Undo</button>
             <button className = "redo" onClick = {handleRedo}>Redo</button>
-            <button className = "edit">Edit</button>
-            <button className = "hint">Hint</button>
+            <button className = "edit" onClick ={handleEdit}>Edit</button>
+            <button className = "hint" onClick ={handleHint}>Hint</button>
         </div>
     );
 }
