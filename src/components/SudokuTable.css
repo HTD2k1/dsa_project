@@ -1,0 +1,15 @@
+table,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: red;
+}
+
+#main-sudoku-table {
+  width: 50%;
+}
+
+tr {
+  height: 50px;
+}
