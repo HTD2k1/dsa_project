@@ -18,23 +18,13 @@ function GameSection(props) {
   const [sudokuTableData, setSudokuTableData] = React.useState(SUDOKU_DATA);
 
   const [clickCell, setClickCell] = React.useState({
-    rowIndex: null, // 0 -> 0 -> 0
-    colIndex: null, // 7 -> 7 -> 7
-    cellValue: null, // 0 -> 1 -> 2
+    rowIndex: null,
+    colIndex: null,
+    cellValue: null,
   });
 
   const [undoCellStack, setUndoCellStack] = React.useState([]);
   const [redoCellStack, setRedoCellStack] = React.useState([]);
-
-  // NO
-  // clickCell.push
-  // clickCell.pop
-
-  // YES
-  // clickCell -> value
-  // value.pop
-  // value.push
-  // setClickCell(value)
 
   /**
    * @summary Input the number user selects for the current selected cell
@@ -79,8 +69,6 @@ function GameSection(props) {
       <GameTable
         sudokuTableData={sudokuTableData}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
-        // thuoc tinh = prop
-        // ten prop = {}
       />
       <StatusSection
         onClickNumber={(number) => onClickNumber(number)}
