@@ -5,12 +5,11 @@ import MenuBar from "../Menu/Menu";
 import "./index.css";
 
 function StatusSection(props) {
+  const sudokuTableData = props.sudokuTableData;
   return (
     <div className="status">
-      <MenuBar />
-      <Keypad 
-        onClickNumber={(number) => props.onClickNumber(number)}
-      />
+      <MenuBar sudokuTableData={sudokuTableData} />
+      <Keypad onClickNumber={(number) => props.onClickNumber(number)} />
     </div>
   );
 }

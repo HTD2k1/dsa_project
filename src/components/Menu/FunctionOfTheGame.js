@@ -1,8 +1,10 @@
 import React from "react";
 
 function PrintFunctionOfTheGame(props) {
+  // Define prop
+  const sudokuTableData = props.sudokuTableData;
 
-    // TODO: 
+  // TODO:
   const handleUndo = () => {
     // let col = undoStack.pop();
     // let row = undoStack.pop();

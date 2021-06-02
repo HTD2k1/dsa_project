@@ -4,6 +4,7 @@ import './Menu.css';
 import NewGameBar from './NewGameBar';
 
 function MenuBar(props) {
+    const sudokuTableData = props.sudokuTableData;
     const [state,setState] = React.useState(false);
 
     const handleState = ()=>{
