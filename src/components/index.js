@@ -77,13 +77,13 @@ function GameSection(props) {
   return (
     <div className="innercontainer">
       <GameTable
-        sudokuTableData={}
-        onSelectCell={}
+        sudokuTableData={sudokuTableData}
+        onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
         // thuoc tinh = prop
         // ten prop = {}
       />
-      <StatusSection 
-        onClickNumber={(number) => onClickNumber(number)} 
+      <StatusSection
+        onClickNumber={(number) => onClickNumber(number)}
         sudokuTableData={sudokuTableData}
       />
     </div>
