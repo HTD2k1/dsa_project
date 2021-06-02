@@ -13,13 +13,33 @@ function useForceUpdate() {
 
 function GameSection(props) {
   const forceUpdate = useForceUpdate();
+
+  // Table data
   const [sudokuTableData, setSudokuTableData] = React.useState(SUDOKU_DATA);
+
   const [clickCell, setClickCell] = React.useState({
-    rowIndex: null,
-    colIndex: null,
-    cellValue: null,
+    rowIndex: null, // 0 -> 0 -> 0
+    colIndex: null, // 7 -> 7 -> 7
+    cellValue: null, // 0 -> 1 -> 2
   });
 
+  const [undoCellStack, setUndoCellStack] = React.useState([]);
+  const [redoCellStack, setRedoCellStack] = React.useState([]);
+
+  // NO
+  // clickCell.push
+  // clickCell.pop
+
+  // YES
+  // clickCell -> value
+  // value.pop
+  // value.push
+  // setClickCell(value)
+
+  /**
+   * @summary Input the number user selects for the current selected cell
+   * @param {*} num
+   */
   const onClickNumber = (num) => {
     // if (
     //   (clickCell.rowIndex == null &&
@@ -30,11 +50,26 @@ function GameSection(props) {
     //     clickCell.cellValue == null)
     // )
     //   return;
-    clickCell.cellValue = num;
-    sudokuTableData[clickCell.rowIndex][clickCell.colIndex] =
-      clickCell.cellValue;
-    forceUpdate();
+
+    // Change value using temporary variables
+    let newCell = Object.assign(clickCell);
+    newCell.cellValue = num;
+
+    let newSudokuTableData = [].concat(sudokuTableData);
+
+    newSudokuTableData[newCell.rowIndex][newCell.colIndex] = newCell.cellValue;
+
+    // Update new state
+    setClickCell(newCell);
+    setSudokuTableData(newSudokuTableData);
   };
+
+  /**
+   * @summary Store current cell that user selects
+   * @param {*} rowIdx
+   * @param {*} colIdx
+   * @param {*} value
+   */
   const onSelectCell = (rowIdx, colIdx, value) => {
     setClickCell({ rowIndex: rowIdx, colIndex: colIdx, cellValue: value });
   };
