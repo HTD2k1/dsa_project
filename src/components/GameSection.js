@@ -51,6 +51,9 @@ function GameSection(props) {
     newSudokuTableData[newCell.rowIndex][newCell.colIndex] = newCell.cellValue;
 
     // Update new state
+    setUndoCellStack(prevStack => [...prevStack,curCell])
+    setRedoCellStack([]); //compulsory
+
     setClickCell(newCell);
     setSudokuTableData(newSudokuTableData);
   };
