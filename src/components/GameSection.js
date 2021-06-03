@@ -98,6 +98,18 @@ function GameSection(props) {
     setSudokuTableData(stacks[2])
 
   }
+ /**
+   * @summary Handle REDO functionality
+   * @param {Array} stacks: stack[0] = undoCellStack, stack[1] = redoCellStack, stack[2] = sudokuTableData 
+   * @author Tien Dat
+   */
+  const handleRedo = (stacks) =>{
+    //Update state
+    setUndoCellStack(stacks[0])
+    setRedoCellStack(stacks[1])
+    setSudokuTableData(stacks[2])
+
+  }
   }
 
   return (
