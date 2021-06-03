@@ -1,5 +1,5 @@
-import React,{useState, useContext} from "react";
-import { SUDOKU_DATA } from "../../config/constants/gameData";
+import React,{useState} from "react";
+
 
 
 import "./GameTable.css";
@@ -47,10 +47,11 @@ function GameTable(props) {
         <tbody>
           {props.sudokuTableData && props.sudokuTableData.map((suRow, suRowIndex) => {
             return (
-              <tr>
+              <tr key={100000 + suRowIndex}>
                 {suRow.map((suCol, suColIndex) => {
                   return (
                     <td
+                      key={suRowIndex*10 + suColIndex}
                       onClick={() => props.onSelectCell(suRowIndex, suColIndex, suCol)}
                       className={`game__cell game__cell--filled`}
                     >
