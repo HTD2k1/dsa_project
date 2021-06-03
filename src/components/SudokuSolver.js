@@ -32,7 +32,7 @@ const result =[
     [6, 2, 1, 9, 5, 8, 7, 3, 4],
     [5, 7, 9, 3, 1, 4, 6, 2, 8]
     ]
-const SudokuSolver = (props) => {
+export const useSudokuSolver = (inputHookBoard) => {
 
 
 console.log("Hope it works")
@@ -138,6 +138,7 @@ const findEmptyCell = (board) =>{
     return undefined
 }
 
+    return solve(inputHookBoard)
 }
 
-export default SudokuSolver;
+
