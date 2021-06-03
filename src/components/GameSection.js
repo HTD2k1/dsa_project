@@ -1,7 +1,6 @@
 import React from "react";
 import GameTable from "./Game/GameTable";
 import Keypad from "./Keypad/Keypad";
-import SudokuContextProvider from "../contexts/SudokuContext"
 
 import "./GameSection.css";
 import StatusSection from "./Status/StatusSection";
@@ -65,9 +64,13 @@ function GameSection(props) {
     setClickCell({ rowIndex: rowIdx, colIndex: colIdx, cellValue: value });
   };
 
+  const handleSolve =(solvedTable) =>{
+    setSudokuTableData(solvedTable)
+  }
+
   return (
     <div className="innercontainer">
-      <SudokuContextProvider>
+     
       <GameTable
         sudokuTableData={sudokuTableData}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
@@ -75,8 +78,9 @@ function GameSection(props) {
       <StatusSection
         onClickNumber={(number) => onClickNumber(number)}
         sudokuTableData={sudokuTableData}
+        onSolveSudoku={handleSolve}
       />
-      </SudokuContextProvider>
+  
      
     </div>
   );

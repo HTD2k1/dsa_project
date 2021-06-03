@@ -1,9 +1,12 @@
 import React from "react";
+import {useSudokuSolver} from "../SudokuSolver"
 
 function PrintFunctionOfTheGame(props) {
   // Define prop
   const sudokuTableData = props.sudokuTableData;
 
+  const solvedTable = useSudokuSolver(sudokuTableData) //Custom hook to solve sudoku table
+  console.log("Can you solve it?", solvedTable)
   // TODO:
   const handleUndo = () => {
     // let col = undoStack.pop();
@@ -45,20 +48,6 @@ function PrintFunctionOfTheGame(props) {
 
   const handleEdit = () => {};
 
-  const handleSolve = () => {
-    const solution = [
-      [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [9, 4, 7, 1, 8, 3, 5, 6, 2],
-      [2, 5, 8, 6, 4, 7, 3, 9, 1],
-      [8, 9, 2, 4, 6, 5, 1, 7, 3],
-      [4, 3, 5, 7, 9, 1, 2, 8, 6],
-      [7, 1, 6, 8, 3, 2, 4, 5, 9],
-      [3, 8, 4, 2, 7, 6, 9, 1, 5],
-      [6, 2, 1, 9, 5, 8, 7, 3, 4],
-      [5, 7, 9, 3, 1, 4, 6, 0, 0]
-      ]
-    return solution
-  };
 
   return (
     <div>
@@ -72,7 +61,7 @@ function PrintFunctionOfTheGame(props) {
         Edit
       </button>
       <button className="hint" 
-      onClick={e => props.onHandleSolve(e)}
+      onClick={() => props.onSolveSudoku(solvedTable)}
       >
         Solve
       </button>

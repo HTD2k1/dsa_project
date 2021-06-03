@@ -6,12 +6,9 @@ import "./StatusSection.css";
 
 function StatusSection(props) {
   const sudokuTableData = props.sudokuTableData;
-  const handleSolve =(props) =>{
-    console.log("Handle solve_ StatusSection", props)
-  }
   return (
     <div className="status">
-      <MenuBar sudokuTableData={sudokuTableData} onHandleSolve={handleSolve} />
+      <MenuBar sudokuTableData={sudokuTableData} onSolveSudoku={solvedTable => props.onSolveSudoku(solvedTable)} />
       <Keypad onClickNumber={(number) => props.onClickNumber(number)} />
     </div>
   );

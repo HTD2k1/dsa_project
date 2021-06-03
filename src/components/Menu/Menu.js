@@ -18,7 +18,7 @@ function MenuBar(props) {
         <div className="menuGame">
             <button className = "newGame" onClick = {handleState}>New game</button>
             {state == true ? <NewGameBar/> : 
-            <PrintFunctionOfTheGame onHandleSolve ={handleSolve}/>}
+            <PrintFunctionOfTheGame onSolveSudoku ={sovledTable => props.onSolveSudoku(sovledTable) } sudokuTableData={sudokuTableData}/>}
         </div>
     );
 }
