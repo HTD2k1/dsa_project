@@ -68,8 +68,24 @@ function GameSection(props) {
     setClickCell({ rowIndex: rowIdx, colIndex: colIdx, cellValue: value });
   };
 
+
+  /**
+   * @summary Handle SOLVE functionality
+   * @param {Array} solvedTable 
+   * @author Tien Dat
+   */
   const handleSolve =(solvedTable) =>{
-    setSudokuTableData(solvedTable)
+    switch(solvedTable){
+      case false:
+        alert("The puzzle is unsolvable")
+        break;
+      case undefined:
+        alert("Cannot receive input sudoku table")
+        break;
+      default:
+        setSudokuTableData(solvedTable)
+    }
+  }
   }
 
   return (
