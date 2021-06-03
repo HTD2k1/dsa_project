@@ -45,7 +45,6 @@ function GameSection(props) {
     let curCell = {...clickCell} //Cannot use below method as it creates pointer to the same object
     let newCell = Object.assign(clickCell);
     newCell.cellValue = num;
-
     let newSudokuTableData = [].concat(sudokuTableData);
 
     newSudokuTableData[newCell.rowIndex][newCell.colIndex] = newCell.cellValue;
