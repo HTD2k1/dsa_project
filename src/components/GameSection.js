@@ -42,6 +42,7 @@ function GameSection(props) {
     //   return;
 
     // Change value using temporary variables
+    let curCell = {...clickCell} //Cannot use below method as it creates pointer to the same object
     let newCell = Object.assign(clickCell);
     newCell.cellValue = num;
 
