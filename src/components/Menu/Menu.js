@@ -11,11 +11,14 @@ function MenuBar(props) {
         // {state == false ? setState(true) : setState(false)};
         setState(state => !state);        
     }
-
+    const handleSolve = (props) =>{
+        console.log(props)
+    }
     return (
         <div className="menuGame">
             <button className = "newGame" onClick = {handleState}>New game</button>
-            {state == true ? <NewGameBar/> : <PrintFunctionOfTheGame/>}
+            {state == true ? <NewGameBar/> : 
+            <PrintFunctionOfTheGame onHandleSolve ={handleSolve}/>}
         </div>
     );
 }

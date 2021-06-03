@@ -1,9 +1,10 @@
 import React from "react";
 import GameTable from "./Game/GameTable";
 import Keypad from "./Keypad/Keypad";
+import SudokuContextProvider from "../contexts/SudokuContext"
 
-import "./index.css";
-import StatusSection from "./Status";
+import "./GameSection.css";
+import StatusSection from "./Status/StatusSection";
 import { SUDOKU_DATA } from "../config/constants/gameData";
 
 function useForceUpdate() {
@@ -20,7 +21,7 @@ function GameSection(props) {
   const [clickCell, setClickCell] = React.useState({
     rowIndex: null,
     colIndex: null,
-    cellValue: null,
+    cellValue: null,  
   });
 
   const [undoCellStack, setUndoCellStack] = React.useState([]);
@@ -66,6 +67,7 @@ function GameSection(props) {
 
   return (
     <div className="innercontainer">
+      <SudokuContextProvider>
       <GameTable
         sudokuTableData={sudokuTableData}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
@@ -74,6 +76,8 @@ function GameSection(props) {
         onClickNumber={(number) => onClickNumber(number)}
         sudokuTableData={sudokuTableData}
       />
+      </SudokuContextProvider>
+     
     </div>
   );
 }
