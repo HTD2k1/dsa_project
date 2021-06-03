@@ -32,10 +32,15 @@ const result =[
     [6, 2, 1, 9, 5, 8, 7, 3, 4],
     [5, 7, 9, 3, 1, 4, 6, 2, 8]
     ]
-export const useSudokuSolver = (inputHookBoard) => {
+export const callSudokuSolver = (inputHookBoard) => {
 
+    console.log("callSudokuSolver") // Rendering signals
 
-console.log("Hope it works")
+//Stop executing if cannot receive any input
+if(inputHookBoard === undefined){
+    return undefined
+} 
+
 //Validate input: Not really good solution
     
     const isInputValid = (board, number, row, col) => {
