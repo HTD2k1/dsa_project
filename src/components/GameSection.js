@@ -110,6 +110,14 @@ function GameSection(props) {
     setSudokuTableData(stacks[2])
 
   }
+  
+  /**
+   * @summary Change Game mode
+   * @param {Array} table 
+   * @author Tien Dat
+   */
+  const handleModeChange = (table) =>{
+    setSudokuTableData(table)
   }
 
   return (
