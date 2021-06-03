@@ -1,6 +1,6 @@
 import React,{useState, useContext} from "react";
 import { SUDOKU_DATA } from "../../config/constants/gameData";
-import {SudokuContext} from "../../contexts/SudokuContext"
+
 
 import "./GameTable.css";
 
