@@ -128,9 +128,17 @@ function GameSection(props) {
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
       />
       <StatusSection
-        onClickNumber={(number) => onClickNumber(number)}
+        //Data
         sudokuTableData={sudokuTableData}
+        undoCellStack={undoCellStack}
+        redoCellStack={redoCellStack}
+        //Game FUNCTIONALITY handling
+        onClickNumber={(number) => onClickNumber(number)}
         onSolveSudoku={handleSolve}
+        onUndo ={handleUndo}
+        onRedo ={handleRedo}
+        //Game mode handling
+        onModeChange ={handleModeChange}
       />
   
      
