@@ -5,20 +5,29 @@ import NewGameBar from './NewGameBar';
 
 function MenuBar(props) {
     const sudokuTableData = props.sudokuTableData;
-    const [state,setState] = React.useState(false);
+    const [isModeChange,setIsModeChange] = React.useState(false);
 
-    const handleState = ()=>{
-        // {state == false ? setState(true) : setState(false)};
-        setState(state => !state);        
+    const handleModeChange = ()=>{
+        setIsModeChange(state => !state);        
     }
-    const handleSolve = (props) =>{
-        console.log(props)
-    }
+    
     return (
         <div className="menuGame">
-            <button className = "newGame" onClick = {handleState}>New game</button>
-            {state == true ? <NewGameBar/> : 
-            <PrintFunctionOfTheGame onSolveSudoku ={sovledTable => props.onSolveSudoku(sovledTable) } sudokuTableData={sudokuTableData}/>}
+            <button className = "newGame" onClick = {handleModeChange}>New game</button>
+            {isModeChange === true ? 
+            <NewGameBar
+            onModeChange={table => props.onModeChange(table)}
+            /> : 
+            <PrintFunctionOfTheGame 
+            //Data
+            sudokuTableData={sudokuTableData}
+            redoCellStack={props.redoCellStack}
+            undoCellStack={props.undoCellStack}
+            //Handling 
+            onSolveSudoku ={sovledTable => props.onSolveSudoku(sovledTable) } 
+            onUndo ={stacks => props.onUndo(stacks) }
+            onRedo ={stacks => props.onRedo(stacks) }
+            />}
         </div>
     );
 }
