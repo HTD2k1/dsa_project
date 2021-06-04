@@ -1,0 +1,22 @@
+.banner{
+    font-family: "Poppins";
+    font-size: 20px;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    background-color:white;
+    padding: 10px 20px;
+    margin-left: 500px;
+    margin-top: 200px;
+    display:block;
+}
+.img-firework{
+    width: 70px;
+    height:70px;
+    position: absolute;
+}
+.congra-and-pic{
+    display: flex;
+    position: absolute;
+
+}
