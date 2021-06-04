@@ -20,7 +20,7 @@ function GameSection(props) {
   const [clickCell, setClickCell] = React.useState({
     rowIndex: null,
     colIndex: null,
-    cellValue: null,  
+    cellValue: null,
   });
 
   const [undoCellStack, setUndoCellStack] = React.useState([]);
@@ -42,7 +42,7 @@ function GameSection(props) {
     //   return;
 
     // Change value using temporary variables
-    let curCell = {...clickCell} //Cannot use below method as it creates pointer to the same object
+    let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
     let newCell = Object.assign(clickCell);
     newCell.cellValue = num;
     let newSudokuTableData = [].concat(sudokuTableData);
@@ -50,7 +50,7 @@ function GameSection(props) {
     newSudokuTableData[newCell.rowIndex][newCell.colIndex] = newCell.cellValue;
 
     // Update new state
-    setUndoCellStack(prevStack => [...prevStack,curCell])
+    setUndoCellStack((prevStack) => [...prevStack, curCell]);
     setRedoCellStack([]); //compulsory
 
     setClickCell(newCell);
@@ -67,61 +67,57 @@ function GameSection(props) {
     setClickCell({ rowIndex: rowIdx, colIndex: colIdx, cellValue: value });
   };
 
-
   /**
    * @summary Handle SOLVE functionality
-   * @param {Array} solvedTable 
+   * @param {Array} solvedTable
    * @author Tien Dat
    */
-  const handleSolve =(solvedTable) =>{
-    switch(solvedTable){
+  const handleSolve = (solvedTable) => {
+    switch (solvedTable) {
       case false:
-        alert("The puzzle is unsolvable")
+        alert("The puzzle is unsolvable");
         break;
       case undefined:
-        alert("Cannot receive input sudoku table")
+        alert("Cannot receive input sudoku table");
         break;
       default:
-        setSudokuTableData(solvedTable)
+        setSudokuTableData(solvedTable);
     }
-  }
+  };
   /**
    * @summary Handle UNDO functionality
-   * @param {Array} stacks: stack[0] = undoCellStack, stack[1] = redoCellStack, stack[2] = sudokuTableData 
+   * @param {Array} stacks: stack[0] = undoCellStack, stack[1] = redoCellStack, stack[2] = sudokuTableData
    * @author Tien Dat
    */
-  const handleUndo = (stacks) =>{
+  const handleUndo = (stacks) => {
     //Update state
-    setUndoCellStack(stacks[0])
-    setRedoCellStack(stacks[1])
-    setSudokuTableData(stacks[2])
-
-  }
- /**
+    setUndoCellStack(stacks[0]);
+    setRedoCellStack(stacks[1]);
+    setSudokuTableData(stacks[2]);
+  };
+  /**
    * @summary Handle REDO functionality
-   * @param {Array} stacks: stack[0] = undoCellStack, stack[1] = redoCellStack, stack[2] = sudokuTableData 
+   * @param {Array} stacks: stack[0] = undoCellStack, stack[1] = redoCellStack, stack[2] = sudokuTableData
    * @author Tien Dat
    */
-  const handleRedo = (stacks) =>{
+  const handleRedo = (stacks) => {
     //Update state
-    setUndoCellStack(stacks[0])
-    setRedoCellStack(stacks[1])
-    setSudokuTableData(stacks[2])
+    setUndoCellStack(stacks[0]);
+    setRedoCellStack(stacks[1]);
+    setSudokuTableData(stacks[2]);
+  };
 
-  }
-  
   /**
    * @summary Change Game mode
-   * @param {Array} table 
+   * @param {Array} table
    * @author Tien Dat
    */
-  const handleModeChange = (table) =>{
-    setSudokuTableData(table)
-  }
+  const handleModeChange = (table) => {
+    setSudokuTableData(table);
+  };
 
   return (
     <div className="innercontainer">
-     
       <GameTable
         sudokuTableData={sudokuTableData}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
@@ -134,13 +130,11 @@ function GameSection(props) {
         //Game FUNCTIONALITY handling
         onClickNumber={(number) => onClickNumber(number)}
         onSolveSudoku={handleSolve}
-        onUndo ={handleUndo}
-        onRedo ={handleRedo}
+        onUndo={handleUndo}
+        onRedo={handleRedo}
         //Game mode handling
-        onModeChange ={handleModeChange}
+        onModeChange={handleModeChange}
       />
-  
-     
     </div>
   );
 }
