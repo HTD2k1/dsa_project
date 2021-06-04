@@ -4,22 +4,8 @@ import "./Menu.css";
 import NewGameBar from "./NewGameBar";
 
 function MenuBar(props) {
-<<<<<<< Updated upstream
   const sudokuTableData = props.sudokuTableData;
   const [isModeChange, setIsModeChange] = React.useState(false);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const [state,setState] = React.useState(false);
-=======
-  const sudokuTableData = props.sudokuTableData;
-  const [isModeChange, setIsModeChange] = React.useState(false);
->>>>>>> b3d70272fd5be30f30547f7b7040092534edac53
-=======
-  const sudokuTableData = props.sudokuTableData;
-  const [isModeChange, setIsModeChange] = React.useState(false);
->>>>>>> b3d70272fd5be30f30547f7b7040092534edac53
->>>>>>> Stashed changes
 
   const handleModeChange = () => {
     setIsModeChange((state) => !state);
