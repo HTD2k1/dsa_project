@@ -22,6 +22,32 @@ function NewGameBar(props) {
       default:
         break;
     }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    const handleHard = () =>{
+        
+    }
+
+    const handleExpert = () =>{
+        
+    }
+
+    return (
+        <div className = "newGameBar">
+            <p className = "header">Choose game's mode</p>
+            <button className = "easy" onClick ={handleEasy}>Easy</button>
+            <button className = "medium" onClick ={handleMedium}>Medium</button>
+            <button className = "hard" onClick ={handleHard}>Hard</button>
+            <button className = "expert" onClick ={handleExpert}>Expert</button>
+        </div>
+    );
+=======
+=======
+>>>>>>> b3d70272fd5be30f30547f7b7040092534edac53
+>>>>>>> Stashed changes
   };
 
   return (
@@ -53,6 +79,13 @@ function NewGameBar(props) {
       </button>
     </div>
   );
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> b3d70272fd5be30f30547f7b7040092534edac53
+=======
+>>>>>>> b3d70272fd5be30f30547f7b7040092534edac53
+>>>>>>> Stashed changes
 }
 
 export default NewGameBar;
