@@ -73,7 +73,7 @@ function PrintFunctionOfTheGame(props) {
         Redo
       </button>
       <button
-        className="hint"
+        className="solve"
         onClick={() => props.onSolveSudoku(getSolution())}
       >
         Solve

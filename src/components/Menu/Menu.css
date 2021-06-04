@@ -63,7 +63,7 @@
 .newGameBar {
   display: flex;
   flex-direction: column;
-  margin-right: 160px;
+  margin-right: 350px;
 }
 
 .header {
@@ -76,22 +76,53 @@
   font-family: "Poppins";
   font-size: 20px;
   background: none;
+  background-color: #50b1f1;
+  color: white;
+  border-color: #50b1f1;
+}
+.easy:hover {
+  background-color: white;
+  color: #50b1f1;
 }
 
 .medium {
   font-family: "Poppins";
   font-size: 20px;
   background: none;
+  background-color: #50b1f1;
+  color: white;
+  border-color: #50b1f1;
+}
+
+.medium:hover {
+  background-color: white;
+  color: #50b1f1;
 }
 
 .hard {
   font-family: "Poppins";
   font-size: 20px;
   background: none;
+  background-color: #50b1f1;
+  color: white;
+  border-color: #50b1f1;
+}
+
+.hard:hover {
+  background-color: white;
+  color: #50b1f1;
 }
 
 .expert {
   font-family: "Poppins";
   font-size: 20px;
   background: none;
+  background-color: #50b1f1;
+  color: white;
+  border-color: #50b1f1;
+}
+
+.expert:hover {
+  background-color: white;
+  color: #50b1f1;
 }
