@@ -4,40 +4,45 @@
 }
 
 .newGame {
-  font-family: "Poppins";
   font-size: 30px;
-  background: none;
+  background: #3498db;
+  color: white;
   transition: 0.5s ease;
   padding: 20px 30px;
   margin: 10px;
+  border: 0.5px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .newGame:hover {
-  transform: translate(5px, -5px);
+  transform: translate(2px, -2px);
 }
 
 .undo {
-  font-family: "Poppins";
   font-size: 20px;
   background: none;
   color: #3498db;
   border-color: #3498db;
   border-radius: 10px;
+  transition: 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .undo:hover {
+  transform: translate(1px, -1px);
   background: #3498db;
   color: white;
 }
 
 .redo {
-  font-family: "Poppins";
   font-size: 20px;
   margin-left: 15px;
   background: none;
   color: #3498db;
   border-color: #3498db;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .redo:hover {
@@ -46,13 +51,13 @@
 }
 
 .solve {
-  font-family: "Poppins";
   font-size: 20px;
   margin-left: 15px;
   background: none;
   color: #3498db;
   border-color: #3498db;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .solve:hover {
@@ -67,13 +72,11 @@
 }
 
 .header {
-  font-family: "Poppins";
   font-size: 20px;
   margin-left: 17px;
 }
 
 .easy {
-  font-family: "Poppins";
   font-size: 20px;
   background: none;
   background-color: #50b1f1;
@@ -86,7 +89,6 @@
 }
 
 .medium {
-  font-family: "Poppins";
   font-size: 20px;
   background: none;
   background-color: #50b1f1;
@@ -100,7 +102,6 @@
 }
 
 .hard {
-  font-family: "Poppins";
   font-size: 20px;
   background: none;
   background-color: #50b1f1;
@@ -114,7 +115,6 @@
 }
 
 .expert {
-  font-family: "Poppins";
   font-size: 20px;
   background: none;
   background-color: #50b1f1;
