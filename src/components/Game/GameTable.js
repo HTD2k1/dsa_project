@@ -45,16 +45,16 @@ function GameTable(props) {
             props.sudokuTableData.map((suRow, suRowIndex) => {
               return (
                 <tr key={100000 + suRowIndex}>
-                  {suRow.map((suCol, suColIndex) => {
+                  {suRow.map((suValue, suColIndex) => {
                     return (
                       <td
                         key={suRowIndex * 10 + suColIndex}
                         onClick={() =>
-                          props.onSelectCell(suRowIndex, suColIndex, suCol)
+                          props.onSelectCell(suRowIndex, suColIndex, suValue)
                         }
                         className={`game__cell game__cell--filled`}
                       >
-                        {suCol !== 0 ? suCol : null}
+                        {suValue !== 0 ? suValue : null}
                       </td>
                     );
                   })}
