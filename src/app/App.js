@@ -1,4 +1,4 @@
-import GameSection from '../components';
+import GameSection from '../components/GameSection';
 
 import './App.css';
 

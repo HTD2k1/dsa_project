@@ -1,10 +1,8 @@
-import React from "react";
-import { SUDOKU_DATA } from "../../config/constants/gameData";
+import React, { useState } from "react";
 
 import "./GameTable.css";
 
 function GameTable(props) {
-  
   const [clickCell, setClickCell] = React.useState({
     rowIndex: null,
     colIndex: null,
@@ -43,22 +41,26 @@ function GameTable(props) {
     <div className="game">
       <table className="game__board">
         <tbody>
-          {props.sudokuTableData && props.sudokuTableData.map((suRow, suRowIndex) => {
-            return (
-              <tr>
-                {suRow.map((suCol, suColIndex) => {
-                  return (
-                    <td
-                      onClick={() => props.onSelectCell(suRowIndex, suColIndex, suCol)}
-                      className={`game__cell game__cell--filled`}
-                    >
-                      {suCol !== 0 ? suCol : null}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {props.sudokuTableData &&
+            props.sudokuTableData.map((suRow, suRowIndex) => {
+              return (
+                <tr key={100000 + suRowIndex}>
+                  {suRow.map((suCol, suColIndex) => {
+                    return (
+                      <td
+                        key={suRowIndex * 10 + suColIndex}
+                        onClick={() =>
+                          props.onSelectCell(suRowIndex, suColIndex, suCol)
+                        }
+                        className={`game__cell game__cell--filled`}
+                      >
+                        {suCol !== 0 ? suCol : null}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>
