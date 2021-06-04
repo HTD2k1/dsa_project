@@ -43,7 +43,7 @@ function GameSection(props) {
 
     // Change value using temporary variables
     let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
-    let newCell = Object.assign(clickCell);
+    let newCell = JSON.parse(JSON.stringify(clickCell));
     newCell.cellValue = num;
     let newSudokuTableData = [].concat(sudokuTableData);
 
