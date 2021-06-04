@@ -86,10 +86,12 @@
   background-color: #50b1f1;
   color: white;
   border-color: #50b1f1;
+  transition: 0.5s ease;
 }
 .easy:hover {
   background-color: white;
   color: #50b1f1;
+  transform: translate(0px, -5px);
 }
 
 .medium {
@@ -98,11 +100,13 @@
   background-color: #50b1f1;
   color: white;
   border-color: #50b1f1;
+  transition: 0.5s ease;
 }
 
 .medium:hover {
   background-color: white;
   color: #50b1f1;
+  transform: translate(0px, -5px);
 }
 
 .hard {
@@ -111,11 +115,13 @@
   background-color: #50b1f1;
   color: white;
   border-color: #50b1f1;
+  transition: 0.5s ease;
 }
 
 .hard:hover {
   background-color: white;
   color: #50b1f1;
+  transform: translate(0px, -5px);
 }
 
 .expert {
@@ -124,9 +130,11 @@
   background-color: #50b1f1;
   color: white;
   border-color: #50b1f1;
+  transition: 0.5s ease;
 }
 
 .expert:hover {
   background-color: white;
   color: #50b1f1;
+  transform: translate(0px, -5px);
 }
