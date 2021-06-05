@@ -5,6 +5,7 @@ import Keypad from "./Keypad/Keypad";
 import "./GameSection.css";
 import StatusSection from "./Status/StatusSection";
 import { SUDOKU_DATA } from "../config/constants/gameData";
+import { callSudokuSolver } from "./SudokuSolver";
 
 function useForceUpdate() {
   const [value, setValue] = React.useState(0); // integer state
@@ -25,6 +26,8 @@ function GameSection(props) {
 
   const [undoCellStack, setUndoCellStack] = React.useState([]);
   const [redoCellStack, setRedoCellStack] = React.useState([]);
+
+  React.useEffect(() => callSudokuSolver(sudokuTableData), [sudokuTableData]);
 
   /**
    * @summary Input the number user selects for the current selected cell

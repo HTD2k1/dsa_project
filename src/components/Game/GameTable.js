@@ -8,35 +8,6 @@ function GameTable(props) {
     colIndex: null,
   });
 
-  /**
-   * @summary Highlight cell when user clicks a cell
-   * @param
-   * @author Ken Pham
-   */
-  const onSelectCell = (rowIdx, colIdx, value) => {
-    let newClickCell = Object.assign(clickCell);
-    newClickCell.rowIndex = rowIdx;
-    newClickCell.colIndex = colIdx;
-    setClickCell(newClickCell);
-  };
-  const onFillCell = (rowIdx, colIdx) => {};
-
-  const selectedCell = (cell) => {
-    return <td className={`game__cell game__cell--selected`}>{cell}</td>;
-  };
-  const filledCell = (cell) => {
-    return <td className={`game__cell game__cell--filled`}>{cell}</td>;
-  };
-  const handleCellState = (state, row, col) => {
-    let cellValue = props.sudokuTableData[row][col];
-    switch (state) {
-      case "SELECT":
-        return selectedCell(cellValue);
-      case "FILL":
-        return filledCell(cellValue);
-    }
-  };
-
   return (
     <div className="game">
       <table className="game__board">
