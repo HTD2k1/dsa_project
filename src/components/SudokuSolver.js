@@ -35,7 +35,6 @@ const result = [
 ];
 export const callSudokuSolver = (inputHookBoard) => {
   console.log("callSudokuSolver"); // Rendering signals
-
   //Stop executing if cannot receive any input
   if (inputHookBoard === undefined) {
     return undefined;
@@ -132,7 +131,7 @@ const validateBoards = (board) => {
   return result;
 };
 
-const findEmptyCell = (board) => {
+export const findEmptyCell = (board) => {
   for (var i = 0; i < board.length; i++)
     for (var j = 0; j < board[i].length; j++) {
       if (board[i][j] === 0) return [i, j];
