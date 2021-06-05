@@ -52,6 +52,11 @@
   background-color: var(--color-orange);
 }
 
+.game__cell:hover{
+  background-color: var(--color-orange);
+}
+
+
 .game__cell.game__cell--filled.game__cell--selected {
   color: var(--color-grey);
   background-color: var(--color-orange);

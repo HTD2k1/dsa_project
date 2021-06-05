@@ -46,7 +46,7 @@ export const callSudokuSolver = (inputHookBoard) => {
 
 //Validate input: Not really good solution
 
-const isInputValid = (board, number, row, col) => {
+export const isInputValid = (board, number, row, col) => {
   return (
     checkRow(board, number, row) &&
     checkColumn(board, number, col) &&

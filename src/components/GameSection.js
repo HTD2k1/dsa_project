@@ -5,7 +5,7 @@ import Keypad from "./Keypad/Keypad";
 import "./GameSection.css";
 import StatusSection from "./Status/StatusSection";
 import { SUDOKU_DATA } from "../config/constants/gameData";
-import { callSudokuSolver } from "./SudokuSolver";
+import { callSudokuSolver, isInputValid } from "./SudokuSolver";
 
 function useForceUpdate() {
   const [value, setValue] = React.useState(0); // integer state
@@ -27,8 +27,6 @@ function GameSection(props) {
   const [undoCellStack, setUndoCellStack] = React.useState([]);
   const [redoCellStack, setRedoCellStack] = React.useState([]);
 
-  React.useEffect(() => callSudokuSolver(sudokuTableData), [sudokuTableData]);
-
   /**
    * @summary Input the number user selects for the current selected cell
    * @param {*} num
@@ -43,6 +41,11 @@ function GameSection(props) {
     //     clickCell.cellValue == null)
     // )
     //   return;
+
+    if(!isInputValid(sudokuTableData, num, clickCell.rowIndex, clickCell.colIndex)){
+      alert('Invalid Input');
+      return;
+    } 
 
     // Change value using temporary variables
     let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
@@ -124,6 +127,7 @@ function GameSection(props) {
       <GameTable
         sudokuTableData={sudokuTableData}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
+        clickCell={clickCell}
       />
       <StatusSection
         //Data

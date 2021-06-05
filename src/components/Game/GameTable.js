@@ -17,6 +17,7 @@ function GameTable(props) {
               return (
                 <tr key={100000 + suRowIndex}>
                   {suRow.map((suValue, suColIndex) => {
+                    
                     return (
                       <td
                         key={suRowIndex * 10 + suColIndex}
