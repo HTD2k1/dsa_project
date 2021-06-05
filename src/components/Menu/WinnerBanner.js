@@ -6,7 +6,7 @@ function WinnerBanner(props) {
         <div className ='banner'>
            <div className ='congra-and-pic'>
            <text>Congratulation!!!</text>
-            <img className='img-firework' src="images/firework3.png" alt=""/>
+            {/* <img className='img-firework' src="images/firework3.png" alt=""/> */}
            </div>
             <p>You've won the game.</p>
         </div>
