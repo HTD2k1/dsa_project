@@ -1,3 +1,4 @@
+import {generateSudoku} from "../SudokuGenerator";
 import React from "react";
 import {
   SUDOKU_DATA,
@@ -7,7 +8,7 @@ import {
 } from "../../config/constants/gameData";
 function NewGameBar(props) {
   const changeMode = (mode) => {
-    switch (mode) {
+    /*switch (mode) {
       case "EASY":
         return SUDOKU_DATA;
 
@@ -21,7 +22,8 @@ function NewGameBar(props) {
         return EXPERT_SUDOKU;
       default:
         break;
-    }
+    }*/
+    return generateSudoku(mode);
   };
 
   return (
