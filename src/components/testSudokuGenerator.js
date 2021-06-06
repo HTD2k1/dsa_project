@@ -149,3 +149,4 @@ fillDiagonal();
 fillRemaining(0, 3);
 removeKDigits(10);
 console.log(board);
+console.log(checkWinningCondition());
