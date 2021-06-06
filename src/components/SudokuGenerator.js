@@ -2,17 +2,7 @@
 function random(){
   return Math.floor(Math.random()*9 + 1);
 }
-//create sudoku board
-var board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0, 0, 0],
-          ];
+var board = [[]];
 /*for(let i = 0; i < 9; i++){
   board[i] = 0;
   for(let j = 0; j < 9; j++){
@@ -119,12 +109,13 @@ function removeKDigits(count)
 {
   while (count != 0)
   {
-      let cellId = Math.floor(Math.random()*80+1);
+      let cellId = Math.floor(Math.random()*81+1);
 
       // System.out.println(cellId);
       // extract coordinates i  and j
       let i = parseInt(cellId/9);
       let j = parseInt(cellId%9);
+      if (i == 9) i-=1;
       if (j != 0)
           j = j - 1;
 
@@ -136,6 +127,17 @@ function removeKDigits(count)
   }
 }
 export const generateSudoku = (mode) =>{
+  //create sudoku board
+  board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0],
+          ];
   fillDiagonal();
   fillRemaining(0, 3);
   switch (mode) {
