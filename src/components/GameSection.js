@@ -122,9 +122,7 @@ function GameSection(props) {
   };
 
   const renderGameSection = () => {
-    console.log("orgPuzzle", orgPuzzle);
     if (orgPuzzle) {
-      // console.log("orgPuzzle", orgPuzzle);
       if (checkWinningCondition(orgPuzzle)) {
         return <WinnerBanner />;
       } else {

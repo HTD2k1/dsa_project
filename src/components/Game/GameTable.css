@@ -38,6 +38,7 @@
   padding: 12px 16px;
   color: var(--color-blue);
   cursor: pointer;
+  height: 30px;
 }
 
 .game__cell.game__cell--filled {
