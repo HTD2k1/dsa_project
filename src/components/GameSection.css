@@ -1,0 +1,5 @@
+.innercontainer {
+  display: flex;
+  color: var(--color-grey);
+  flex-direction: row;
+}

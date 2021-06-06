@@ -1,0 +1,24 @@
+.status__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+}
+
+.status__number {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 26px;
+  padding: 12px 0;
+  cursor: pointer;
+  border: 0.25px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 2px;
+  transition: 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.status__number:hover {
+  background-color: #eaeef4;
+  color: var(--color-blue);
+  transform: translate(1.5px, -1.5px);
+}
