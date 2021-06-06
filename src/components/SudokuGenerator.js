@@ -114,7 +114,7 @@ function removeKDigits(count)
       // System.out.println(cellId);
       // extract coordinates i  and j
       let i = parseInt(cellId/9);
-      let j = parseInt(cellId%9);
+      let j = parseInt(cellId%9 + 1);
       if (i == 9) i-=1;
       if (j != 0)
           j = j - 1;
