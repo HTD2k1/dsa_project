@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import GameTable from "./Game/GameTable";
 import Keypad from "./Keypad/Keypad";
 
@@ -42,7 +42,6 @@ function GameSection(props) {
     //     clickCell.cellValue == null)
     // )
     //   return;
-
 
     // Change value using temporary variables
     let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
@@ -117,7 +116,7 @@ function GameSection(props) {
    */
   const handleModeChange = (table) => {
     setSudokuTableData(table);
-    setOrgPuzzle(table)
+    setOrgPuzzle(table);
   };
 
   return (

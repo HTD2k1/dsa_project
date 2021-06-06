@@ -1,4 +1,4 @@
-import {generateSudoku} from "../SudokuGenerator";
+import { generateSudoku } from "../SudokuGenerator";
 import React from "react";
 import {
   SUDOKU_DATA,
