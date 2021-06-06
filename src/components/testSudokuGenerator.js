@@ -121,31 +121,30 @@ function removeKDigits(count) {
     }
   }
 }
-const checkWinningCondition = () => {
-    for( let i = 0; i < 9; i++){
-        for( let j = 0; j < 9; j++)
-            if (board[i][j] == 0) return false;          
+export const checkWinningCondition = () => {
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) if (board[i][j] == 0) return false;
+  }
+  for (let i = 0; i < 9; i++) {
+    let sumRow = 0;
+    let sumCol = 0;
+    for (let j = 0; j < 9; j++) {
+      sumRow += board[i][j];
+      sumCol += board[i][j];
     }
-    for( let i = 0; i < 9; i++){
-        let sumRow = 0;
-        let sumCol = 0;
-        for(let j = 0; j < 9; j++){
-            sumRow += board[i][j];
-            sumCol += board[i][j];
-        } 
-        if ((sumRow != 45) && (sumCol != 45)) return false;
+    if (sumRow != 45 && sumCol != 45) return false;
+  }
+  for (let i = 0; i < 9; i += 3) {
+    for (let j = 0; j < 9; j += 3) {
+      let sum = 0;
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) sum += board[i + k][j + l];
+      }
+      if (sum != 45) return false;
     }
-    for( let i = 0; i < 9; i+=3){
-        for( let j = 0; j < 9; j += 3){
-            let sum = 0;
-            for( let k = 0; k < 3; k++){
-                for( let l = 0; l < 3; l++) sum+= board[i+k][j+l];
-            }
-            if (sum != 45) return false;
-        }
-    }
-    return true;
-}
+  }
+  return true;
+};
 fillDiagonal();
 fillRemaining(0, 3);
 removeKDigits(10);

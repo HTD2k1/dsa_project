@@ -6,6 +6,8 @@ import "./GameSection.css";
 import StatusSection from "./Status/StatusSection";
 import { SUDOKU_DATA } from "../config/constants/gameData";
 import { callSudokuSolver, isInputValid } from "./SudokuSolver";
+import WinnerBanner from "./Menu/WinnerBanner";
+import {checkWinningCondition} from '../components/testSudokuGenerator'
 
 function useForceUpdate() {
   const [value, setValue] = React.useState(0); // integer state
@@ -121,12 +123,16 @@ function GameSection(props) {
 
   return (
     <div className="innercontainer">
-      <GameTable
-        sudokuTableData={sudokuTableData}
-        orgPuzzle={orgPuzzle}
-        onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
-        clickCell={clickCell}
-      />
+      {!checkWinningCondition() ? (
+        <GameTable
+          sudokuTableData={sudokuTableData}
+          orgPuzzle={orgPuzzle}
+          onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
+          clickCell={clickCell}
+        />
+      ) : (
+        <WinnerBanner />
+      )}
       <StatusSection
         //Data
         sudokuTableData={sudokuTableData}
