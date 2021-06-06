@@ -160,7 +160,7 @@ function removeKDigits() {
 fillDiagonal();
 fillRemaining(0, 3);
 removeKDigits();
-console.log(board);
+// console.log(board);
 
 const checkInputbySet = (board) => {
   if (board === undefined) return undefined;

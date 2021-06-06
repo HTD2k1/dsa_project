@@ -121,7 +121,8 @@ function removeKDigits(count) {
     }
   }
 }
-export const checkWinningCondition = () => {
+export const checkWinningCondition = (board) => {
+    console.log('board', board)
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) if (board[i][j] == 0) return false;
   }
@@ -148,5 +149,5 @@ export const checkWinningCondition = () => {
 fillDiagonal();
 fillRemaining(0, 3);
 removeKDigits(10);
-console.log(board);
-console.log(checkWinningCondition());
+// console.log(board);
+// console.log(checkWinningCondition());

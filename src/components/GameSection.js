@@ -7,7 +7,7 @@ import StatusSection from "./Status/StatusSection";
 import { SUDOKU_DATA } from "../config/constants/gameData";
 import { callSudokuSolver, isInputValid } from "./SudokuSolver";
 import WinnerBanner from "./Menu/WinnerBanner";
-import {checkWinningCondition} from '../components/testSudokuGenerator'
+import { checkWinningCondition } from "../components/testSudokuGenerator";
 
 function useForceUpdate() {
   const [value, setValue] = React.useState(0); // integer state
@@ -121,18 +121,30 @@ function GameSection(props) {
     setOrgPuzzle(table);
   };
 
+  const renderGameSection = () => {
+    console.log("orgPuzzle", orgPuzzle);
+    if (orgPuzzle) {
+      // console.log("orgPuzzle", orgPuzzle);
+      if (checkWinningCondition(orgPuzzle)) {
+        return <WinnerBanner />;
+      } else {
+        return (
+          <GameTable
+            sudokuTableData={sudokuTableData}
+            orgPuzzle={orgPuzzle}
+            onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
+            clickCell={clickCell}
+          />
+        );
+      }
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div className="innercontainer">
-      {!checkWinningCondition() ? (
-        <GameTable
-          sudokuTableData={sudokuTableData}
-          orgPuzzle={orgPuzzle}
-          onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
-          clickCell={clickCell}
-        />
-      ) : (
-        <WinnerBanner />
-      )}
+      {renderGameSection()}
       <StatusSection
         //Data
         sudokuTableData={sudokuTableData}
