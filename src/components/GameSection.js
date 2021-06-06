@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import GameTable from "./Game/GameTable";
 import Keypad from "./Keypad/Keypad";
 
@@ -17,6 +17,7 @@ function GameSection(props) {
 
   // Table data
   const [sudokuTableData, setSudokuTableData] = React.useState(SUDOKU_DATA);
+  const [orgPuzzle, setOrgPuzzle] = useState(SUDOKU_DATA);
 
   const [clickCell, setClickCell] = React.useState({
     rowIndex: null,
@@ -42,10 +43,6 @@ function GameSection(props) {
     // )
     //   return;
 
-    if(!isInputValid(sudokuTableData, num, clickCell.rowIndex, clickCell.colIndex)){
-      alert('Invalid Input');
-      return;
-    } 
 
     // Change value using temporary variables
     let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
@@ -120,12 +117,14 @@ function GameSection(props) {
    */
   const handleModeChange = (table) => {
     setSudokuTableData(table);
+    setOrgPuzzle(table)
   };
 
   return (
     <div className="innercontainer">
       <GameTable
         sudokuTableData={sudokuTableData}
+        orgPuzzle={orgPuzzle}
         onSelectCell={(row, col, value) => onSelectCell(row, col, value)}
         clickCell={clickCell}
       />
