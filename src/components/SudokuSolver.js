@@ -10,17 +10,6 @@ const test1 = [
   [0, 7, 9, 3, 1, 4, 6, 0, 8],
 ];
 
-const test = [
-  [1, 6, 3, 5, 2, 9, 8, 4, 7],
-  [9, 4, 7, 1, 8, 3, 5, 6, 2],
-  [2, 5, 8, 6, 4, 7, 3, 9, 1],
-  [8, 9, 2, 4, 6, 5, 1, 7, 3],
-  [4, 3, 5, 7, 9, 1, 2, 8, 6],
-  [7, 1, 6, 8, 3, 2, 4, 5, 9],
-  [3, 8, 4, 2, 7, 6, 9, 1, 5],
-  [6, 2, 1, 9, 5, 8, 7, 3, 4],
-  [5, 7, 9, 3, 1, 4, 6, 0, 0],
-];
 
 const result = [
   [1, 6, 3, 5, 2, 9, 8, 4, 7],
@@ -47,21 +36,26 @@ export const callSudokuSolver = (inputHookBoard) => {
 
 export const isInputValid = (board, number, row, col) => {
   return (
-    checkRow(board, number, row) &&
-    checkColumn(board, number, col) &&
+    checkRow(board, number, row, col) &&
+    checkColumn(board, number,row, col) &&
     checkSubGrid(board, number, row, col)
   );
 };
 
 //Check if number has already existed in current row
-const checkRow = (board, number, row) => {
-  return board[row].includes(number) ? false : true;
+const checkRow = (board, number, row, col) => {
+  for (let i  = 0; i < board.length;i++){
+    if(i === col) continue
+    else if (board[row][i] === number) return false
+  }
+  return true
 };
 
 //Check if number has already existed in current column
-const checkColumn = (board, number, col) => {
-  for (const row of board) {
-    if (row[col] === number) return false;
+const checkColumn = (board, number,row, col) => {
+  for (const iRow of board) {
+    if(board.indexOf(iRow) === row) continue
+    if (iRow[col] === number) return false;
   }
   return true;
 };
@@ -73,6 +67,7 @@ const checkSubGrid = (board, number, row, col) => {
 
   for (var i = gridRow; i < gridRow + 3; i++) {
     for (var j = gridCol; j < gridCol + 3; j++) {
+      if(i === row && j === col) continue
       if (board[i][j] === number) return false;
     }
   }
