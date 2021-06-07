@@ -4,10 +4,11 @@ import { isInputValid } from "../SudokuSolver";
 import "./GameTable.css";
 
 function GameTable(props) {
+  console.log("GameTable_rendering")
   //State
   const [unchangeableSet, setUnchangeableSet] = useState(null);
   const [invalidSet, setInvalidSet] = useState(null);
-
+  const clickValue = props.clickCell.cellValue
   useEffect(() => {
     const newSet = createSetOfUnchangeableCells(props.orgPuzzle);
     setUnchangeableSet(newSet);
@@ -19,6 +20,17 @@ function GameTable(props) {
     console.log("Inside useEffect_invalidSet", tmpSet);
     setInvalidSet(tmpSet);
   }, [props.sudokuTableData]);
+
+
+  //Input handling 
+  useEffect(() => {
+    window.addEventListener('keypress', e => {
+      console.log("clickCell",props.clickCell)
+      const input = e.key
+      if(input <= 9 && input >= 1 && input !== clickValue)
+      console.log(e.key)
+    });
+  }, []);
 
   const createInValidSet = (board) => {
     const newSet = new Set();
@@ -98,6 +110,8 @@ function GameTable(props) {
                           onClick={() =>
                             props.onSelectCell(suRowIndex, suColIndex, suValue)
                           }
+                          onKeyDown={(e) => console.log(e.key)}
+
                           className={`game__cell game__cell--filled`}
                         >
                           {suValue !== 0 ? suValue : null}
