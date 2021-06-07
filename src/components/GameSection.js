@@ -85,7 +85,14 @@ function GameSection(props) {
         alert("Cannot receive input sudoku table");
         break;
       default:
-        setSudokuTableData(solvedTable);
+        if(checkWinningCondition(solvedTable)) 
+        { console.log("Winning ?",checkWinningCondition(solvedTable))
+        setSudokuTableData(solvedTable)  
+        
+        }
+         
+        else alert("The puzzle is unsolvable") ;
+        break;
     }
   };
   /**

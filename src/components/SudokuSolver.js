@@ -22,7 +22,6 @@ const result = [
   [5, 7, 9, 3, 1, 4, 6, 2, 8],
 ];
 export const callSudokuSolver = (inputHookBoard) => {
-  console.log("callSudokuSolver"); // Rendering signals
   //Stop executing if cannot receive any input
   if (inputHookBoard === undefined) {
     return undefined;
@@ -84,21 +83,30 @@ const isFull = (board) => {
 };
 
 const solve = (board) => {
+  //Check whether board is fully filled
   if (isFull(board)) return board;
   else {
+    //Find all possible boards
     const possibleBoards = validateBoards(board);
+
+    //Implement backtracking search
     return backTrackingSearch(possibleBoards);
   }
 };
 
 const backTrackingSearch = (boards) => {
+  //Base case
   if (boards.length < 1) {
     return false;
+  
+  //Recursive case
   } else {
-    const board = boards.shift();
-    const solvable = solve(board);
-    if (solvable !== false) return solvable;
-    else return backTrackingSearch(boards);
+    const board = boards.shift();   // Take the first branch
+
+    // Recursively call solve() to check if this branch is solvable
+    const solvable = solve(board); 
+    if (solvable !== false) return solvable;  
+    else return backTrackingSearch(boards); //Move to another branch
   }
 };
 
