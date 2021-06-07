@@ -35,15 +35,15 @@ function GameSection(props) {
    * @param {*} num
    */
   const onClickNumber = (num) => {
-    // if (
-    //   (clickCell.rowIndex == null &&
-    //     clickCell.colIndex == null &&
-    //     clickCell.cellValue !== 0) ||
-    //   (clickCell.rowIndex == null &&
-    //     clickCell.colIndex == null &&
-    //     clickCell.cellValue == null)
-    // )
-    //   return;
+    if (
+      (clickCell.rowIndex == null &&
+        clickCell.colIndex == null &&
+        clickCell.cellValue !== 0) ||
+      (clickCell.rowIndex == null &&
+        clickCell.colIndex == null &&
+        clickCell.cellValue == null)
+    )
+      return;
 
     // Change value using temporary variables
     let curCell = { ...clickCell }; //Cannot use below method as it creates pointer to the same object
