@@ -127,19 +127,19 @@ export const generateSudoku = (mode) => {
   fillRemaining(0, 3);
   switch (mode) {
     case "EASY":
-      removeKDigits(40);
+      removeKDigits(39);
       break;
 
     case "MEDIUM":
-      removeKDigits(48);
+      removeKDigits(47);
       break;
 
     case "HARD":
-      removeKDigits(56);
+      removeKDigits(55);
       break;
 
     case "EXPERT":
-      removeKDigits(64);
+      removeKDigits(63);
       break;
     default:
       break;
